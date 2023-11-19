@@ -41,8 +41,8 @@ public class PeçaMoto extends Produto implements Vendavel{
 		if(qntVendida > getQntEstoque()) {
 			throw new EstoqueInsuficienteException("Quantidade requerida é maior que a de estoque!");
 		}else {
-			this.qntEstoque -= qntVendida;
-			System.out.println("Quantidade no Estoque: "+this.qntEstoque);
+			setQntEstoque(getQntEstoque() - qntVendida);
+        	System.out.println("Venda de " + qntVendida + " unidades de " + getNome() + " realizada com sucesso.");
 		}
 	}
 }

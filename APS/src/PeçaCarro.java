@@ -36,14 +36,13 @@ public class PeçaCarro extends Produto implements Vendavel{
 				+"\n Quantidade: "+getQntEstoque();
 	}
 	
-	@Override
-	public void vender(int qntVendida) throws EstoqueInsuficienteException{
-		if(qntVendida > getQntEstoque()) {
-			throw new EstoqueInsuficienteException("Quantidade requerida é maior que a de estoque!");
-		}else {
-			this.qntEstoque -= qntVendida;
-			System.out.println("Venda Realizada com Sucesso!");
-			System.out.println("Quantidade no Estoque: "+this.qntEstoque);
-		}
-	}
+    @Override
+    public void vender(int qntVendida) throws EstoqueInsuficienteException {
+        if (qntVendida > getQntEstoque()) {
+            throw new EstoqueInsuficienteException("Estoque insuficiente para venda de " + getNome());
+        }else {
+        	setQntEstoque(getQntEstoque() - qntVendida);
+        	System.out.println("Venda de " + qntVendida + " unidades de " + getNome() + " realizada com sucesso.");
+        }
+    }
 }
