@@ -28,12 +28,12 @@ public class PeçaCarro extends Produto implements Vendavel{
 	
 	@Override
 	public String toString() {
-		return "PeçaCarro "
+		return "\nPeça para Carro "
 				+"\n Nome: "+getNome()
 				+"\n Preco: "+getPreco()
 				+"\n Material: "+getMaterial()
-				+"\n Modelo: "+getModelo()
-				+"\n Quantidade: "+getQntEstoque();
+				+"\n Quantidade: "+getQntEstoque()
+				+"\n Modelo: "+getModelo();
 	}
 	
     @Override

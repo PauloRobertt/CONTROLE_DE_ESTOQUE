@@ -1,0 +1,4 @@
+"CarroItem1", 15.30, 50, "Material1", "Modelo1"
+"CarroItem2", 19.30, 14, "Material2", "Modelo2"
+"CarroItem3", 11.30, 30, "Material3", "Modelo3"
+"CarroItem4", 40.00, 70, "Material4", "Modelo4"
