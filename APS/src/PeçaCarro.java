@@ -1,7 +1,7 @@
 public class PeçaCarro extends Produto implements Vendavel{
 	
 	private String Modelo;
-	private String Material;
+	private String Material;;
 	
 	public PeçaCarro(String nome, double preco, int qntEstoque, String Material, String Modelo) {
 		super(nome, preco, qntEstoque);
@@ -28,21 +28,23 @@ public class PeçaCarro extends Produto implements Vendavel{
 	
 	@Override
 	public String toString() {
-		return "\nPeça para Carro "
+		return "PeçaCarro "
 				+"\n Nome: "+getNome()
 				+"\n Preco: "+getPreco()
-				+"\n Material: "+getMaterial()
 				+"\n Quantidade: "+getQntEstoque()
+				+"\n Material: "+getMaterial()
 				+"\n Modelo: "+getModelo();
 	}
 	
-    @Override
-    public void vender(int qntVendida) throws EstoqueInsuficienteException {
-        if (qntVendida > getQntEstoque()) {
-            throw new EstoqueInsuficienteException("Estoque insuficiente para venda de " + getNome());
-        }else {
-        	setQntEstoque(getQntEstoque() - qntVendida);
-        	System.out.println("Venda de " + qntVendida + " unidades de " + getNome() + " realizada com sucesso.");
-        }
-    }
+	@Override
+	public void vender(int qntVendida) throws EstoqueInsuficienteException{
+		if(qntVendida > getQntEstoque()) {
+			throw new EstoqueInsuficienteException("Quantidade requerida é maior que a de estoque!");
+		}else {
+			this.qntEstoque -= qntVendida;
+			System.out.println("Venda Realizada com Sucesso!");
+			System.out.println("Quantidade no Estoque: "+this.qntEstoque);
+		}
+	}
+	
 }

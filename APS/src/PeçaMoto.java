@@ -28,11 +28,11 @@ public class PeçaMoto extends Produto implements Vendavel{
 	
 	@Override
 	public String toString() {
-		return "\nPeça para Moto "
+		return "PeçaMoto "
 				+"\n Nome: "+getNome()
 				+"\n Preco: "+getPreco()
-				+"\n Marca: "+getMarca()
 				+"\n Quantidade: "+getQntEstoque()
+				+"\n Marca: "+getMarca()
 				+"\n Modelo: "+getModelo();
 	}
 	
@@ -41,8 +41,10 @@ public class PeçaMoto extends Produto implements Vendavel{
 		if(qntVendida > getQntEstoque()) {
 			throw new EstoqueInsuficienteException("Quantidade requerida é maior que a de estoque!");
 		}else {
-			setQntEstoque(getQntEstoque() - qntVendida);
-        	System.out.println("Venda de " + qntVendida + " unidades de " + getNome() + " realizada com sucesso.");
+			this.qntEstoque -= qntVendida;
+			System.out.println("Venda Realizada com Sucesso!");
+			System.out.println("Quantidade no Estoque: "+this.qntEstoque);
 		}
 	}
+	
 }
