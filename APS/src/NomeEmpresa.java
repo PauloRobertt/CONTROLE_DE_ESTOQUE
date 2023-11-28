@@ -9,6 +9,8 @@ public class NomeEmpresa {
         Path produtoCarro = Paths.get("C:/Users/Lucas Rafael/Documents/GitHub/CONTROLE_DE_ESTOQUE_TESTE/ProdutosCarro.txt");
         Path produtoMoto = Paths.get("C:/Users/Lucas Rafael/Documents/GitHub/CONTROLE_DE_ESTOQUE_TESTE/ProdutosMoto.txt");
         
+        String NomeProduto = "NomePeçaMoto4";
+        
         try {
             byte[] texto = Files.readAllBytes(produtoCarro);
             String leitura = new String(texto);
@@ -35,12 +37,34 @@ public class NomeEmpresa {
                 }
             }
 
+            // Impressão do conteúdo do ArrayList 'Estoque'
             System.out.println("Conteúdo do arquivo armazenado no ArrayList 'Estoque':");
             for (Vendavel item : Estoque) {
                 System.out.println(item);
             }
             
-        }catch(Exception erro) {
+            
+         // Simulação de Venda do Produto1
+            System.out.println("\nSimulação de Venda do Produto1:");
+            for (Vendavel item : Estoque) {
+                if (item.getNome().equals(NomeProduto)) {
+                    try {
+                        item.vender(30); // Vendendo 15 unidades do Produto1
+                    } catch (EstoqueInsuficienteException e) {
+                        System.out.println("Erro ao vender produto: " + e.getMessage());
+                    }
+                }
+            }
+            
+            // Exibição do Estoque Após a Venda
+            System.out.println("\nEstoque após a venda:");
+            for (Vendavel item : Estoque) {
+            	if(item.getNome().equals(NomeProduto)) {
+            		System.out.println(item);
+            	}
+            }
+            
+        } catch(Exception erro) {
             erro.printStackTrace();
             System.out.println("Ocorreu um Erro!");
         }
