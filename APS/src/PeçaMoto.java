@@ -1,6 +1,6 @@
 /**
- * Classe que representa uma peça de moto que pode ser vendida.
- */
+* Classe que representa uma peça de moto que é uma extenção de produto e que pode ser vendida.
+*/
 public class PeçaMoto extends Produto implements Vendavel {
 
 	private String modelo;
@@ -10,11 +10,12 @@ public class PeçaMoto extends Produto implements Vendavel {
 	/**
 	 * Construtor da classe PeçaMoto.
 	 * 
-	 * @param nome       Nome da peça
-	 * @param preco      Preço da peça
-	 * @param qntEstoque Quantidade em estoque da peça
-	 * @param Marca      Marca da peça de moto
-	 * @param Modelo     Modelo da peça de moto
+	 * @param nome         Nome da peça
+	 * @param preco        Preço da peça
+	 * @param qntEstoque   Quantidade em estoque da peça
+	 * @param durabilidade Durabilidade da peça da moto
+	 * @param marca        Marca da peça de moto
+	 * @param modelo       Modelo da peça de moto
 	 */
 	public PeçaMoto(String nome, double preco, int qntEstoque, String durabilidade, String marca, String modelo) {
 		super(nome, preco, qntEstoque);
@@ -23,10 +24,21 @@ public class PeçaMoto extends Produto implements Vendavel {
 		this.durabilidade = durabilidade;
 	}
 
+    /**
+     * Obtém a durabilidade da peça de moto.
+     *
+     * @return Retorna a durabilidade da peça de moto
+     */
+	
 	public String getDurabilidade() {
-		return durabilidade;
+		return this.durabilidade;
 	}
-
+	
+	/**
+	 * Define a durabilidade da peça de moto.
+	 * 
+	 * @param durabilidade A durabilidade da peça de moto a ser definido
+	 */
 	public void setDurabilidade(String durabilidade) {
 		this.durabilidade = durabilidade;
 	}
@@ -34,10 +46,10 @@ public class PeçaMoto extends Produto implements Vendavel {
 	/**
 	 * Obtém o modelo da peça de moto.
 	 * 
-	 * @return O modelo da peça de moto
+	 * @return Retorna o modelo da peça de moto
 	 */
 	public String getModelo() {
-		return modelo;
+		return this.modelo;
 	}
 
 	/**
@@ -52,10 +64,10 @@ public class PeçaMoto extends Produto implements Vendavel {
 	/**
 	 * Obtém a marca da peça de moto.
 	 * 
-	 * @return A marca da peça de moto
+	 * @return Retorna a marca da peça de moto
 	 */
 	public String getMarca() {
-		return marca;
+		return this.marca;
 	}
 
 	/**
@@ -70,14 +82,14 @@ public class PeçaMoto extends Produto implements Vendavel {
 	/**
 	 * Sobrescrita do método toString para exibir detalhes da peça de moto.
 	 * 
-	 * @return Detalhes da peça de moto (Nome, Preço, Quantidade em Estoque, Marca,
+	 * @return Detalhes da peça de moto (Nome, Preço, Quantidade em Estoque, Durabilidade, Marca,
 	 *         Modelo)
 	 */
 	@Override
 	public String toString() {
 		return 
 				" Nome da Peça: " + getNome() 
-				+ "\n Preco: R$" + getPreco() 
+				+ "\n Preco: R$ " + String.format("%.2f", getPreco()) 
 				+ "\n Quantidade: " + getQntEstoque()
 				+ "\n Durabilidade: " + getDurabilidade()
 				+ "\n Marca: " + getMarca()

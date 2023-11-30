@@ -1,5 +1,5 @@
 /**
- * Classe que representa uma peça de carro que pode ser vendida.
+ * Classe que representa uma peça de carro que é uma extenção de produto e que pode ser vendida.
  */
 public class PeçaCarro extends Produto implements Vendavel {
 
@@ -13,10 +13,11 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @param nome       Nome da peça
 	 * @param preco      Preço da peça
 	 * @param qntEstoque Quantidade em estoque da peça
-	 * @param Material   Material da peça de carro
-	 * @param Modelo     Modelo da peça de carro
+	 * @param marca      Marca da peça de carro
+	 * @param material   Material da peça de carro
+	 * @param modelo     Modelo da peça de carro
 	 */
-	
+
 	public PeçaCarro(String nome, double preco, int qntEstoque, String marca, String material, String modelo) {
 		super(nome, preco, qntEstoque);
 		this.modelo = modelo;
@@ -45,10 +46,10 @@ public class PeçaCarro extends Produto implements Vendavel {
 	/**
 	 * Obtém o material da peça de carro.
 	 * 
-	 * @return O material da peça de carro
+	 * @return Retorna o tipo de material da peça de carro
 	 */
 	public String getMaterial() {
-		return material;
+		return this.material;
 	}
 
 	/**
@@ -59,13 +60,21 @@ public class PeçaCarro extends Produto implements Vendavel {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-	
-	
 
+	/**
+	 * Obtém a marca da peça do carro.
+	 * 
+	 * @return A marca da peça do carro
+	 */
 	public String getMarca() {
-		return marca;
+		return this.marca;
 	}
 
+	/**
+	 * Define a marca da peça do carro.
+	 * 
+	 * @param marca A marca da peça do carro a ser definida
+	 */
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
@@ -73,18 +82,17 @@ public class PeçaCarro extends Produto implements Vendavel {
 	/**
 	 * Sobrescrita do método toString para exibir detalhes da peça de carro.
 	 * 
-	 * @return Detalhes da peça de carro (Nome, Preço, Quantidade em Estoque,
+	 * @return Detalhes da peça de carro (Nome, Preço, Quantidade em Estoque, Marca
 	 *         Material, Modelo)
 	 */
 	@Override
 	public String toString() {
-		return 
-				" Nome da Peça: " + getNome() 
-				+ "\n Preco: R$" + getPreco() 
-				+ "\n Quantidade: " + getQntEstoque()
-				+ "\n Marca: " + getMarca()
-				+ "\n Material: " + getMaterial() 
-				+ "\n Modelo: " + getModelo()+"\n";
+		return " Nome da Peça: " + getNome() 
+			 + "\n Preco: R$ " + String.format("%.2f", getPreco())
+			 + "\n Quantidade: " + getQntEstoque()
+			 + "\n Marca: " + getMarca() 
+			 + "\n Material: " + getMaterial() 
+			 + "\n Modelo: " + getModelo()+"\n";
 	}
 
 	/**
