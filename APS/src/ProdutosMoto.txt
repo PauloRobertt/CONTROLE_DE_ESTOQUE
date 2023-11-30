@@ -1,0 +1,4 @@
+Corrente de Transmissão, 150.00, 25, Alta, MotoTech, MTX-500
+Disco de Freio Traseiro, 80.00, 35, Média, BrakeMaster, BD-200
+Filtro de Ar Esportivo, 45.00, 20, Alta, AirFlow, AF-1500
+Manete de Freio, 30.00, 50, Alta, EasyRide, MRV-10

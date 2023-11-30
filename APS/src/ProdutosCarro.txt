@@ -1,0 +1,5 @@
+Batente, 15.30, 50, COFAP, Borracha, Amortecedor Dianteiro
+Molas, 150.00, 25, Excel Springs, Aço Carbono, Modelo A-2023
+Catalisador, 19.30, 14, AutoCat, Cerâmica Reforçada, Modelo EcoX
+Pastilhas de Freio, 40.00, 70, BrakeMasters, Material Orgânico Premium, Modelo DuroStop
+Bandeja, 180.00, 40, SuperControl Arms, Alumínio Reforçado, Modelo X5
