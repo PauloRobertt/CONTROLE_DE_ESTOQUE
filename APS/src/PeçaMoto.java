@@ -3,8 +3,9 @@
  */
 public class PeçaMoto extends Produto implements Vendavel {
 
-	private String Modelo;
-	private String Marca;
+	private String modelo;
+	private String marca;
+	private String durabilidade;
 
 	/**
 	 * Construtor da classe PeçaMoto.
@@ -15,10 +16,19 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 * @param Marca      Marca da peça de moto
 	 * @param Modelo     Modelo da peça de moto
 	 */
-	public PeçaMoto(String nome, double preco, int qntEstoque, String Marca, String Modelo) {
+	public PeçaMoto(String nome, double preco, int qntEstoque, String durabilidade, String marca, String modelo) {
 		super(nome, preco, qntEstoque);
-		this.Marca = Marca;
-		this.Modelo = Modelo;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.durabilidade = durabilidade;
+	}
+
+	public String getDurabilidade() {
+		return durabilidade;
+	}
+
+	public void setDurabilidade(String durabilidade) {
+		this.durabilidade = durabilidade;
 	}
 
 	/**
@@ -27,7 +37,7 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 * @return O modelo da peça de moto
 	 */
 	public String getModelo() {
-		return Modelo;
+		return modelo;
 	}
 
 	/**
@@ -36,7 +46,7 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 * @param modelo O modelo da peça de moto a ser definido
 	 */
 	public void setModelo(String modelo) {
-		this.Modelo = modelo;
+		this.modelo = modelo;
 	}
 
 	/**
@@ -45,7 +55,7 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 * @return A marca da peça de moto
 	 */
 	public String getMarca() {
-		return Marca;
+		return marca;
 	}
 
 	/**
@@ -54,7 +64,7 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 * @param marca A marca da peça de moto a ser definida
 	 */
 	public void setMarca(String marca) {
-		this.Marca = marca;
+		this.marca = marca;
 	}
 
 	/**
@@ -65,8 +75,13 @@ public class PeçaMoto extends Produto implements Vendavel {
 	 */
 	@Override
 	public String toString() {
-		return "PeçaMoto " + "\n Nome: " + getNome() + "\n Preco: " + getPreco() + "\n Quantidade: " + getQntEstoque()
-				+ "\n Marca: " + getMarca() + "\n Modelo: " + getModelo();
+		return 
+				" Nome da Peça: " + getNome() 
+				+ "\n Preco: R$" + getPreco() 
+				+ "\n Quantidade: " + getQntEstoque()
+				+ "\n Durabilidade: " + getDurabilidade()
+				+ "\n Marca: " + getMarca()
+				+ "\n Modelo: " + getModelo()+"\n";
 	}
 
 	/**

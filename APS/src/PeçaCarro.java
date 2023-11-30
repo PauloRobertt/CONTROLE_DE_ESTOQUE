@@ -3,8 +3,9 @@
  */
 public class PeçaCarro extends Produto implements Vendavel {
 
-	private String Modelo;
-	private String Material;
+	private String modelo;
+	private String material;
+	private String marca;
 
 	/**
 	 * Construtor da classe PeçaCarro.
@@ -15,10 +16,12 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @param Material   Material da peça de carro
 	 * @param Modelo     Modelo da peça de carro
 	 */
-	public PeçaCarro(String nome, double preco, int qntEstoque, String Material, String Modelo) {
+	
+	public PeçaCarro(String nome, double preco, int qntEstoque, String marca, String material, String modelo) {
 		super(nome, preco, qntEstoque);
-		this.Material = Material;
-		this.Modelo = Modelo;
+		this.modelo = modelo;
+		this.material = material;
+		this.marca = marca;
 	}
 
 	/**
@@ -27,7 +30,7 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @return O modelo da peça de carro
 	 */
 	public String getModelo() {
-		return Modelo;
+		return this.modelo;
 	}
 
 	/**
@@ -36,7 +39,7 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @param modelo O modelo da peça de carro a ser definido
 	 */
 	public void setModelo(String modelo) {
-		this.Modelo = modelo;
+		this.modelo = modelo;
 	}
 
 	/**
@@ -45,7 +48,7 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @return O material da peça de carro
 	 */
 	public String getMaterial() {
-		return Material;
+		return material;
 	}
 
 	/**
@@ -54,7 +57,17 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 * @param material O material da peça de carro a ser definido
 	 */
 	public void setMaterial(String material) {
-		this.Material = material;
+		this.material = material;
+	}
+	
+	
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	/**
@@ -65,8 +78,13 @@ public class PeçaCarro extends Produto implements Vendavel {
 	 */
 	@Override
 	public String toString() {
-		return "PeçaCarro " + "\n Nome: " + getNome() + "\n Preco: " + getPreco() + "\n Quantidade: " + getQntEstoque()
-				+ "\n Material: " + getMaterial() + "\n Modelo: " + getModelo();
+		return 
+				" Nome da Peça: " + getNome() 
+				+ "\n Preco: R$" + getPreco() 
+				+ "\n Quantidade: " + getQntEstoque()
+				+ "\n Marca: " + getMarca()
+				+ "\n Material: " + getMaterial() 
+				+ "\n Modelo: " + getModelo()+"\n";
 	}
 
 	/**
