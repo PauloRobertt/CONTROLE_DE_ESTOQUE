@@ -1,4 +1,0 @@
-NomePeçaMoto1, 14.50, 30, "MarcaMoto1", "ModeloMoto1"
-NomePeçaMoto2, 14.50, 30, "MarcaMoto2", "ModeloMoto2"
-NomePeçaMoto3, 14.50, 30, "MarcaMoto3", "ModeloMoto3"
-NomePeçaMoto4,99.99,30,"MarcaMoto4","ModeloMoto4"
