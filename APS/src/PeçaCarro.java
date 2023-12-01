@@ -1,5 +1,6 @@
 /**
- * Classe que representa uma peça de carro que é uma extenção de produto e que pode ser vendida.
+ * Classe que representa uma peça de carro que é uma extenção de produto e que
+ * pode ser vendida.
  */
 public class PeçaCarro extends Produto implements Vendavel {
 

@@ -111,6 +111,14 @@ public class PeçasAutoTech {
 					String nomeProduto = sc.nextLine();
 					System.out.println("Digite a quantidade desejada:");
 					int qtdVendida = sc.nextInt();
+
+					/**
+					 * Código busca por um produto específico no estoque pelo nome fornecido e tenta
+					 * vendê-lo. Se o produto for encontrado e a venda for bem-sucedida, a
+					 * quantidade vendida é subtraída do estoque. Caso contrário, são exibidas
+					 * mensagens apropriadas.
+					 */
+
 					for (Vendavel produto : Estoque) {
 						if (((Produto) produto).getNome().equals(nomeProduto)) {
 							try {

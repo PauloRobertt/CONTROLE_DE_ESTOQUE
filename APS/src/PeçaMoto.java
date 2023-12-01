@@ -1,6 +1,7 @@
 /**
-* Classe que representa uma peça de moto que é uma extenção de produto e que pode ser vendida.
-*/
+ * Classe que representa uma peça de moto que é uma extenção de produto e que
+ * pode ser vendida.
+ */
 public class PeçaMoto extends Produto implements Vendavel {
 
 	private String modelo;
