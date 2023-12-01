@@ -1,5 +1,5 @@
 /**
- * Classe abstrata que representa um produto genérico.
+ * Classe abstrata para representar um produto genérico.
  */
 
 public abstract class Produto {
@@ -8,9 +8,9 @@ public abstract class Produto {
 	 * Atributos da classe Produto
 	 */
 
-	String nome;
-	double preco;
-	int qntEstoque;
+	protected String nome;
+	protected double preco;
+	protected int qntEstoque;
 
 	/**
 	 * Construtor da classe Produto.
